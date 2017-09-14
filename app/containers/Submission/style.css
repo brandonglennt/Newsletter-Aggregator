@@ -1,0 +1,31 @@
+/* Submission Styles */
+
+.container {
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+.welcome{
+    /*min-height:100px;*/
+    width:100%;
+    background:#CCCCCC;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+.newsSubmission {
+    /*min-height:100vh;*/
+    width:100%;
+    background:#EEEEEE;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+input, textarea, select, button {
+    width: 100%;
+    margin: 0;
+    align-content: center;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+}
