@@ -22,13 +22,13 @@ export default class Login extends React.PureComponent {
         </header>
       	<main className='login'>
       		<div className="loginBox">
-      			<img src={require("../../photos/user.jpg" )} className="user"/>
-      			<h2>Log In Here</h2>
+      			<img src={require("../../photos/user.png" )} className="user"/>
+      			<h1>Log In</h1>
       			<form>
       				<p>Email</p>
-      				<input type="text" name="" placeholder="Enter Email"/>
+      				<input type="text" name="" placeholder=""/>
       				<p>Password</p>
-      				<input type="Password" name="" placeholder="••••••"/>
+      				<input type="Password" name="" placeholder=""/>
       				<input type="submit" name="" value="Sign In"/>
       				<a href="#">Forget Password</a>
       			</form>

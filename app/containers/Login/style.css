@@ -10,7 +10,7 @@
 {
 	background: url('../../photos/bg.jpg');
 	background-size: cover;
-	font-family: sans-serif;
+	font-family: verdana;
   width: 100%;
   min-height: 100vh;
 }
@@ -23,8 +23,9 @@
 	width: 350px;
 	padding: 80px 40px;
 	box-sizing: border-box;
-	height: 420px;
-	background: rgba(0,0,0,.6);
+	height: 435px;
+	background: rgba(0,0,0,.37);
+  text-align: center;
 }
 .user
 {
@@ -36,11 +37,18 @@
     top: calc(-100px/2);
     left: calc(50% - 50px);
 }
+h1
+{
+	margin: 0;
+	padding: 0 0 10px;
+	color: #FA8072;
+	text-align: center;
+}
 h2
 {
 	margin: 0;
 	padding: 0 0 20px;
-	color: #dbb300;
+	color: #FA8072;
 	text-align: center;
 }
 .loginBox p
@@ -48,7 +56,8 @@ h2
 	margin: 0;
 	padding: 0;
 	font-weight: bold;
-	color: #fff;
+	color: #ddd;
+  font-family: verdana;
 }
 .loginBox input
 {
@@ -75,21 +84,22 @@ h2
 	border: none;
 	outline: none;
 	height: 40px;
-	color: #fff;
+	color: #eee;
 	font-size: 16px;
-	background: #12069e;
+	background: rgba(255,255,255,.5);
 	cursor: pointer;
 	border-radius: 20px;
+  font-family: verdana;
 }
 .loginBox input[type="submit"]:hover
 {
-	background: #dbb300;
-	color: #262626;
+	background: #FA8072;
+	color: #ddd;
 }
 .loginBox a
 {
-	color: #fff;
-	font-size: 14px;
-	font-weight: bold;
+	color: #FA8072;
+	font-size: 6px;
+	font-weight: lighter;
 	text-decoration: none;
 }

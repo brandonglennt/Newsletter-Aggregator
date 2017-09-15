@@ -11,6 +11,32 @@ import './style.css';
 import './styleM.css';
 
 export default class Home extends React.PureComponent {
+  constructor(){
+    super();
+    this.state={
+      newsletters:[]
+
+    }
+  }
+
+  componentWillMount() {
+    this.getNewsletters();
+  }
+
+  getNewsletters = () => {
+    fetch('http://localhost:8000/api/getNewsletters', {
+      method:'get'
+    })
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(json){
+      this.setState({
+        newsletters:json.newsletters
+      })
+    }.bind(this))
+  };
+
   render() {
     return (
       <div className="container">
@@ -22,16 +48,18 @@ export default class Home extends React.PureComponent {
 
         <main>
             <div className="newsColumn">
-
-                <div className="newsItem">
+              {this.state.newsletters.map((newsletter,index)=>(
+                <a href={newsletter.url} className="newsItem">
                     <div className="newsLogo">
-                    <img className="logoImage" src="https://theclubhou.se/wp-content/uploads/2017/04/theclubhouselogo-1.png"/>
+                    <img className="logoImage" src={newsletter.logo}/>
                     </div>
                     <div className="newsInfo">
-                        <div className="newsTitle">theClubhou.se NewsLetter</div>
-                        <div className="newsDescription">theclubhou.se</div>
+                        <div className="newsTitle">{newsletter.title}</div>
+                        <div className="newsDescription">{newsletter.description}</div>
                     </div>
-                </div>
+                </a>
+              ))}
+
 
             </div>
 

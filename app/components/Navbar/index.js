@@ -40,7 +40,7 @@ export default class Navbar extends React.PureComponent {
       return(
         <nav className="navMobile">
           <Link to="/" className="navButton">Home</Link>
-          <Link to="Login" className="Login">Contact</Link>
+          <Link to="Login" className="Login">Login</Link>
           <Link to="/Submission" className="navButton">Submission</Link>
         </nav>
       )
@@ -54,9 +54,9 @@ export default class Navbar extends React.PureComponent {
         <div className="siteName">{this.props.siteName}</div>
 
         <nav className="nav">
-            <Link to="/" className="navButton">Home</Link>
-            <Link to="/Login" className="navButton">Login</Link>
-            <Link to="/Submission" className="navButton">Submission</Link>
+            <Link to="/" className="navButton">HOME</Link>
+            <Link to="/Login" className="navButton">LOGIN</Link>
+            <Link to="/Submission" className="navButton">SUBMISSION</Link>
         </nav>
 
           <Bar className="menuIcon" onClick={this.handleMenu}/>

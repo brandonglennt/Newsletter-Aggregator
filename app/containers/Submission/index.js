@@ -31,10 +31,11 @@ export default class Submission extends React.PureComponent {
                 </p>
             </div>
             <div className="newsSubmission">
+            <img className="submit" src={require("../../photos/submit.png" )} className="submit"/>
                 <form action="/action_page.php">
                     Company Name <input type="text" name="Description" maxlength="40" required/><br/>
                     Title <input type="text" name="Title" placeholder="Newsletter title" required/><br/>
-                    <input type="text" name="Newsletter URL"/>
+                    Newsletter URL<input type="text" name="Newsletter URL"/>
                     Description <input type="text" name="Description" placeholder="Provide a brief description" maxlength="40" required/><br/>
                 <input type="submit" value="Submit"/>
                 </form>
