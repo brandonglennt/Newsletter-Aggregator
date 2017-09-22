@@ -15,13 +15,17 @@
   align-items:center;
 }
 
+nav {
+  z-index: 998;
+}
+
 .siteName {
   width:30%;
   font-size:2em;
   margin-left:10px;
   margin-top: 10px;
   font-variant:normal;
-  font-family: verdana;
+  font-family: 'Yantramanav', sans-serif;
 }
 
 .nav {
@@ -38,9 +42,10 @@
   margin-right:15px;
   font-weight:bold;
   font-variant:normal;
-  font-family: verdana;
+  font-family: 'Yantramanav', sans-serif;
 }
 
 .menuIcon {
   display:none;
 }
+font-family: 'Yantramanav', sans-serif;

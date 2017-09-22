@@ -11,34 +11,112 @@ import './style.css';
 import './styleM.css';
 
 export default class Submission extends React.PureComponent {
+
+  constructor() {
+    super();
+    this.state = {
+      companyName: "",
+      newsletterTitle: "",
+      newsletterURL: "",
+      description: "",
+      logo: ""
+    }
+  }
+
+  handleCompanyName = (event) => {
+    this.setState({
+      companyName:event.target.value
+    })
+  };
+
+  handleNewsletterTitle = (event) => {
+    this.setState({
+      newsletterTitle:event.target.value
+    })
+  };
+
+  handleNewsletterURL = (event) => {
+    this.setState({
+      newsletterURL:event.target.value
+    })
+  };
+
+  handleDescription = (event) => {
+    this.setState({
+      description:event.target.value
+    })
+  };
+
+  handleLogo = (event) => {
+    event.preventDefault();
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    reader.onloadend = () => {
+      this.setState({
+        logo: file,
+        preview: reader.result
+      })
+    }
+    reader.readAsDataURL(file);
+  }
+
+  storeNewsletter = () => {
+    console.log(JSON.stringify(this.state))
+    let _this = this;
+    let data = new FormData();
+    data.append('companyName', this.state.companyName);
+    data.append('title', this.state.newsletterTitle);
+    data.append('url', this.state.newsletterURL);
+    data.append('description', this.state.description);
+    data.append('logo', this.state.logo);
+
+    fetch('http://localhost:8000/api/storeNewsletter', {
+      method:'POST',
+      body:data
+    })
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(json) {
+      if(json.error){
+        alert(json.error);
+      }
+      else if(json.success) {
+        alert(json.success);
+        _this.context.router.push('/')
+      }
+
+
+    })
+
+  }
+
+
   render() {
     return (
-      <div className="container">
+      <div className="container subBackground">
         <Helmet title="Submission" meta={[ { name: 'description', content: 'Description of Submission' }]}/>
 
         <header>
           <Navbar/>
         </header>
-
-        <header>
-            <div className="navBar"></div>
-        </header>
-
         <main>
-            <div className="welcome">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </div>
             <div className="newsSubmission">
-            <img className="submit" src={require("../../photos/submit.png" )} className="submit"/>
-                <form action="/action_page.php">
-                    Company Name <input type="text" name="Description" maxlength="40" required/><br/>
-                    Title <input type="text" name="Title" placeholder="Newsletter title" required/><br/>
-                    Newsletter URL<input type="text" name="Newsletter URL"/>
-                    Description <input type="text" name="Description" placeholder="Provide a brief description" maxlength="40" required/><br/>
-                <input type="submit" value="Submit"/>
-                </form>
+              <h1>Newsletter Submission</h1><br/>
+              <p>Company Name</p>
+              <input type="text" name="Company Name" maxlength="40" required onChange={this.handleCompanyName}/><br/>
+              <p>Newsletter Title</p>
+              <input type="text" name="Newsletter Title" required onChange={this.handleNewsletterTitle}/><br/>
+              <p>Newsletter URL</p>
+              <input type="text" name="Newsletter URL" required onChange={this.handleNewsletterURL}/>
+              <p>Description</p>
+              <input type="text" name="Description" maxlength="40" required onChange={this.handleDescription}/><br/>
+              <p>Upload Your Company Logo</p><br/>
+              <div className="uploadButton">
+                <input type="file" name="fileToUpload" id="fileToUpload" required onChange={this.handleLogo}/>
+              </div>
+              <input type="submit" value="Submit" onClick={this.storeNewsletter}/>
+              <a href="#">Forget Password</a>
             </div>
         </main>
       </div>

@@ -6,14 +6,15 @@
   min-height:100vh;
 }
 
-.login
+.loginBackground
 {
 	background: url('../../photos/bg.jpg');
 	background-size: cover;
-	font-family: verdana;
+	font-family: 'Yantramanav', sans-serif;
   width: 100%;
   min-height: 100vh;
 }
+
 .loginBox
 {
 	position: absolute;
@@ -23,11 +24,12 @@
 	width: 350px;
 	padding: 80px 40px;
 	box-sizing: border-box;
-	height: 435px;
+	height: 450px;
 	background: rgba(0,0,0,.37);
   text-align: center;
 }
-.user
+
+.lockPhoto
 {
     width: 100px;
     height: 100px;
@@ -37,6 +39,7 @@
     top: calc(-100px/2);
     left: calc(50% - 50px);
 }
+
 h1
 {
 	margin: 0;
@@ -44,21 +47,16 @@ h1
 	color: #FA8072;
 	text-align: center;
 }
-h2
-{
-	margin: 0;
-	padding: 0 0 20px;
-	color: #FA8072;
-	text-align: center;
-}
+
 .loginBox p
 {
 	margin: 0;
 	padding: 0;
 	font-weight: bold;
 	color: #ddd;
-  font-family: verdana;
+  font-family: 'Yantramanav', sans-serif;
 }
+
 .loginBox input
 {
 	width: 100%;
@@ -75,21 +73,19 @@ h2
 	color: #fff;
 	font-size: 16px;
 }
-::placeholder
-{
-	color: rgba(255,255,255,.5);
-}
+
 .loginBox input[type="submit"]
 {
 	border: none;
 	outline: none;
 	height: 40px;
 	color: #eee;
-	font-size: 16px;
+	font-size: 25px;
 	background: rgba(255,255,255,.5);
 	cursor: pointer;
 	border-radius: 20px;
-  font-family: verdana;
+  font-family: 'Yantramanav', sans-serif;
+  font-weight: bold;
 }
 .loginBox input[type="submit"]:hover
 {
@@ -99,7 +95,52 @@ h2
 .loginBox a
 {
 	color: #FA8072;
-	font-size: 6px;
+	font-size: 22px;
 	font-weight: lighter;
 	text-decoration: none;
+}
+
+.renuiDialog p {
+  margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #787878;
+  font-family: 'Yantramanav', sans-serif;
+}
+
+.renuiDialog input
+{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.renuiDialog input [type="text"]{
+  border: bottom;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	height: 40px;
+	background: transparent;
+	color: #444;
+	font-size: 16px;
+  text-align: center;
+}
+
+.renuiDialog input [type="submit"]{
+  border: none;
+	outline: none;
+	height: 40px;
+	color: #eee;
+	font-size: 25px;
+	background: #FA8072;
+	cursor: pointer;
+	border-radius: 20px;
+  font-family: 'Yantramanav', sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.renuiDialog input [type="submit"]:hover
+{
+	background: #FA8072;
+	color: #787878;
 }
