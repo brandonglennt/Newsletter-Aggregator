@@ -1,4 +1,4 @@
-/* Dialog Styles */
+/* SignupBox Styles */
 
 .renuiDialogOverlay {
   height:calc(100vh -  50px);
@@ -66,7 +66,7 @@
   text-align: center;
 }
 
-.renuiDialog .resetButton{
+.renuiDialog .confirmButton{
   border: none;
 	outline: none;
 	height: 40px;
@@ -80,7 +80,7 @@
   text-align: center;
 }
 
-.renuiDialog .resetButton:hover
+.renuiDialog .confirmButton:hover
 {
 	background: #FA8072;
 	color: #787878;

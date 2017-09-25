@@ -17,8 +17,16 @@ export default class Navbar extends React.PureComponent {
   constructor(){
     super();
     this.state = {
-      menuOpen:false
+      menuOpen:false,
+      token:sessionStorage.getItem("token")
     }
+  }
+
+  signOut = () => {
+    sessionStorage.removeItem("token");
+    this.setState({
+      token:""
+    })
   }
 
   handleMenu = () => {
@@ -40,14 +48,22 @@ export default class Navbar extends React.PureComponent {
       return(
         <nav className="navMobile">
           <Link to="/" className="navButton">Home</Link>
-          <Link to="Login" className="Login">Login</Link>
           <Link to="/Submission" className="navButton">Submission</Link>
+          <Link to="Login" className="Login">Login</Link>
         </nav>
       )
     }
   }
 
   render() {
+    let loginButton ="";
+    if(this.state.token===""||this.state.token==undefined){
+      loginButton=<Link to="/Login" className="navButton">LOGIN</Link>;
+    }
+    else{
+      loginButton=<div onClick={this.signOut} className="navButton">SIGN OUT</div>;
+    }
+
     return (
       <div>
         <div className="navBar">
@@ -55,7 +71,7 @@ export default class Navbar extends React.PureComponent {
 
         <nav className="nav">
             <Link to="/" className="navButton">HOME</Link>
-            <Link to="/Login" className="navButton">LOGIN</Link>
+            {loginButton}
             <Link to="/Submission" className="navButton">SUBMISSION</Link>
         </nav>
 

@@ -19,7 +19,18 @@ export default class Submission extends React.PureComponent {
       newsletterTitle: "",
       newsletterURL: "",
       description: "",
-      logo: ""
+      logo: "",
+      token:sessionStorage.getItem("token")
+    }
+  }
+
+  componentWillMount(){
+    this.checkToken();
+  }
+
+  checkToken = () => {
+    if(this.state.token==undefined){
+      this.context.router.push("/Login");
     }
   }
 
@@ -72,7 +83,8 @@ export default class Submission extends React.PureComponent {
 
     fetch('http://localhost:8000/api/storeNewsletter', {
       method:'POST',
-      body:data
+      body:data,
+      headers:{"Authorization":"Bearer "+this.state.token}
     })
     .then(function(response) {
       return response.json();
@@ -116,7 +128,6 @@ export default class Submission extends React.PureComponent {
                 <input type="file" name="fileToUpload" id="fileToUpload" required onChange={this.handleLogo}/>
               </div>
               <input type="submit" value="Submit" onClick={this.storeNewsletter}/>
-              <a href="#">Forget Password</a>
             </div>
         </main>
       </div>

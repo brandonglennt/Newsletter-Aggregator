@@ -24,7 +24,7 @@
 	width: 350px;
 	padding: 80px 40px;
 	box-sizing: border-box;
-	height: 450px;
+	height: 500px;
 	background: rgba(0,0,0,.37);
   text-align: center;
 }
@@ -55,6 +55,7 @@ h1
 	font-weight: bold;
 	color: #ddd;
   font-family: 'Yantramanav', sans-serif;
+  font-size: 25px;
 }
 
 .loginBox input
@@ -98,49 +99,4 @@ h1
 	font-size: 22px;
 	font-weight: lighter;
 	text-decoration: none;
-}
-
-.renuiDialog p {
-  margin: 0;
-	padding: 0;
-	font-weight: bold;
-	color: #787878;
-  font-family: 'Yantramanav', sans-serif;
-}
-
-.renuiDialog input
-{
-	width: 100%;
-	margin-bottom: 20px;
-}
-
-.renuiDialog input [type="text"]{
-  border: bottom;
-	border-bottom: 1px solid #fff;
-	outline: none;
-	height: 40px;
-	background: transparent;
-	color: #444;
-	font-size: 16px;
-  text-align: center;
-}
-
-.renuiDialog input [type="submit"]{
-  border: none;
-	outline: none;
-	height: 40px;
-	color: #eee;
-	font-size: 25px;
-	background: #FA8072;
-	cursor: pointer;
-	border-radius: 20px;
-  font-family: 'Yantramanav', sans-serif;
-  font-weight: bold;
-  text-align: center;
-}
-
-.renuiDialog input [type="submit"]:hover
-{
-	background: #FA8072;
-	color: #787878;
 }
